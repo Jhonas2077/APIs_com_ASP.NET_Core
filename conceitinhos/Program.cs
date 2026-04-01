@@ -3,6 +3,18 @@ using Microsoft.OpenApi.Models;
 // Cria e configura o objeto `WebApplicationBuilder`, que é usado para configurar os serviços e o pipeline de solicitação HTTP.
 var builder = WebApplication.CreateBuilder(args);
 
+
+// Configuração de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ConfigurarCORS", builder =>
+    {
+        builder.AllowAnyOrigin()  // Permite qualquer origem
+               .AllowAnyMethod()  // Permite qualquer método (GET, POST, etc.)
+               .AllowAnyHeader(); // Permite qualquer cabeçalho
+    });
+});
+
 // Configura os serviços necessários para a aplicação. 
 // `AddControllers` adiciona suporte para controllers MVC, o que permite criar endpoints de API e renderizar views.
 builder.Services.AddControllers();
@@ -32,6 +44,9 @@ builder.Services.AddSingleton(new PessoaRepositorio(stringDeConexao));
 
 // Constrói o objeto `WebApplication` com base nas configurações fornecidas e no contêiner de serviços configurado.
 var app = builder.Build();
+
+// Aplicar a política de CORS
+app.UseCors("ConfigurarCORS");
 
 // Configura o Swagger UI
 app.UseSwagger();
