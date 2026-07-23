@@ -1,0 +1,16 @@
+aula7
+agora será criado um modelo/entidade que podera ter acesso a um objeto que poderá ser usado para enviar e receber dados via requisições
+primeiro
+crie uma pasta, pois vai haver diversos modelos
+. no exemplo pessoa.cs
+public class Pessoa
+{
+public int Codigo{get;set;}
+public string? Nome {get; set;}
+public string? Cidade {get;set;}
+public int Idade {get;set;}
+
+}
+
+
+//Public, Private e Protected são os principais modificadores de acesso da Programação Orientada a Objetos

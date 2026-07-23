@@ -1,0 +1,1 @@
+controler é o que conversa com o usuario - uma ponte da api com o repositorio que conversa com o banco de dads e o modelo/entidade é o objeto

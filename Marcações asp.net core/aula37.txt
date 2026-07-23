@@ -1,0 +1,14 @@
+aula 37- Criação da tabela html
+
+O comando table é responsável pela criação de uma tabela
+
+cabeçalho e estrutura de listagem
+
+<thead> </thead> -- é o comando de cabeçalho da tabela
+<tr> </tr> --é o comando de criar uma linha na tabela
+<th> -- Cria uma coluna
+
+<tbody id="tabela"> </tbody>
+--aqui deve ser o local onde é impleemntado o conteúdo 
+--futuramente será utilizado id da tabeala
+para implementar os valores do banco 

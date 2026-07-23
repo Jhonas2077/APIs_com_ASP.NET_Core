@@ -1,0 +1,6 @@
+aula6
+
+. dotnet watch run - atualiza automáticamente qualquer modificação
+. assim o servidor atualiza tb
+. atualiza o projeto em tempo real.
+. o servidor faz um copiar e colar do projeto

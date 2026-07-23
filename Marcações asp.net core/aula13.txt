@@ -1,0 +1,2 @@
+aula12/13
+ idéia do repositório é ter uma classe que executa ações-comandos sql

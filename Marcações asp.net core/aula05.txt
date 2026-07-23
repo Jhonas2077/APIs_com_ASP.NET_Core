@@ -1,0 +1,214 @@
+aula 05-- configuração do program.cs
+
+basicamente, de forma crua:
+“Crie uma API, registre os controllers (rotas)
+ e comece a escutar requisições.”
+
+[PROGRAM.CS]
+
+// Cria e configura o objeto `WebApplicationBuilder`, que é usado para configurar os serviços e o pipeline de solicitação HTTP.
+var builder = WebApplication.CreateBuilder(args);
+
+// Configura os serviços necessários para a aplicação. 
+// `AddControllers` adiciona suporte para controllers MVC, o que permite criar endpoints de API e renderizar views.
+builder.Services.AddControllers();
+
+// Constrói o objeto `WebApplication` com base nas configurações fornecidas e no contêiner de serviços configurado.
+var app = builder.Build();
+
+// Mapeia os controllers para os endpoints disponíveis na aplicação.
+// Isso faz com que os controllers sejam acessíveis através das rotas definidas nas suas classes de controller.
+app.MapControllers();
+
+// Inicia a aplicação e começa a escutar as solicitações HTTP.
+app.Run();
+
+
+
+Claro. Os comentários do professor explicam **o que cada linha faz**, mas quem está começando costuma precisar entender **o propósito geral**. Vamos simplificar:
+
+```csharp
+// Cria a aplicação ASP.NET
+var builder = WebApplication.CreateBuilder(args);
+
+// Adiciona suporte para Controllers (onde ficam as rotas da API)
+builder.Services.AddControllers();
+
+// Monta a aplicação com as configurações feitas acima
+var app = builder.Build();
+
+// Liga os Controllers às URLs da aplicação
+app.MapControllers();
+
+// Inicia o servidor e fica esperando requisições
+app.Run();
+```
+
+## O que acontece nesse código?
+
+Imagine que você está abrindo uma lanchonete:
+
+### 1. `CreateBuilder()`
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+```
+
+Você está alugando o prédio e preparando a lanchonete.
+
+Ainda não abriu para os clientes, apenas está configurando tudo.
+
+---
+
+### 2. `AddControllers()`
+
+```csharp
+builder.Services.AddControllers();
+```
+
+Você contrata os atendentes.
+
+Os Controllers são como atendentes que recebem pedidos dos clientes e respondem.
+
+---
+
+### 3. `Build()`
+
+```csharp
+var app = builder.Build();
+```
+
+Agora a lanchonete está pronta.
+
+Mesas, cozinha e atendentes já estão organizados.
+
+---
+
+### 4. `MapControllers()`
+
+```csharp
+app.MapControllers();
+```
+
+Você coloca as placas indicando onde cada serviço está.
+
+Por exemplo:
+
+* `/clientes`
+* `/produtos`
+* `/pedidos`
+
+Sem isso, o ASP.NET não saberia para qual Controller enviar cada requisição.
+
+---
+
+### 5. `Run()`
+
+```csharp
+app.Run();
+```
+
+Abre as portas da lanchonete.
+
+A aplicação começa a escutar requisições HTTP.
+
+---
+
+# O que são Endpoints?
+
+Um **endpoint** é uma URL que pode ser acessada para executar alguma ação.
+
+Por exemplo:
+
+```text
+https://localhost:5001/produtos
+```
+
+ou
+
+```text
+https://localhost:5001/clientes
+```
+
+Cada uma dessas URLs é um endpoint.
+
+Pense em um endpoint como um "endereço" dentro da sua API.
+
+---
+
+## Exemplo prático
+
+Suponha este Controller:
+
+```csharp
+[ApiController]
+[Route("produtos")]
+public class ProdutosController : ControllerBase
+{
+    [HttpGet]
+    public string Listar()
+    {
+        return "Lista de produtos";
+    }
+}
+```
+
+Quando alguém acessar:
+
+```text
+https://localhost:5001/produtos
+```
+
+o método:
+
+```csharp
+public string Listar()
+```
+
+será executado.
+
+Nesse caso:
+
+```text
+GET /produtos
+```
+
+é um endpoint.
+
+---
+
+## Alguns endpoints comuns
+
+| Método HTTP | Endpoint    | Ação              |
+| ----------- | ----------- | ----------------- |
+| GET         | /produtos   | Listar produtos   |
+| GET         | /produtos/1 | Buscar produto 1  |
+| POST        | /produtos   | Cadastrar produto |
+| PUT         | /produtos/1 | Atualizar produto |
+| DELETE      | /produtos/1 | Remover produto   |
+
+---
+
+## Resumindo
+
+* **Program.cs** configura e inicia a aplicação.
+* **Controllers** recebem as requisições.
+* **Endpoints** são as URLs da API.
+* **MapControllers()** conecta as URLs aos Controllers.
+* **Run()** inicia o servidor.
+
+Uma forma simples de visualizar é:
+
+```text
+Cliente
+   ↓
+Endpoint (/produtos)
+   ↓
+Controller
+   ↓
+Método
+   ↓
+Resposta
+```
+
+Esse fluxo (Cliente → Endpoint → Controller → Resposta) é a base de praticamente toda API feita com ASP.NET Core.

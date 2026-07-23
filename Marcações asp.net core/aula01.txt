@@ -1,0 +1,31 @@
+APIs com ASP.NET Core
+
+introdução ao asp.net
+compreender uso de apis
+consfigurar o ambiente de desenvlvimento
+criar e executrar projetos
+testar requisições
+estruturar projeto(modelo,controle e repositório)
+conexão com banco mysql
+implementar comandos SQL
+conhecer o swagger
+
+segundo módulo
+implementar o entity framework
+corrigindo problema de cors
+consumir api -- front end
+
+.net -- plataforma de desenvolvimento, usa c# e f#
+
+ASP.NET Core -- framework para construir aplicativos web e apis
+
+API --Interface de Programação de Aplicações --sistema online 
+que pode acessar de varios dispositivos diferentes, oferece disponibilidade, funcionallidade
+
+ambiente de desenvolvimento:
+. vsc -----.net8 ---------mysql-----S2
+  
+extensões: 
+. c# kit dev -----
+. thunder client para testar as apis
+. gerenciador de banco de dados

@@ -1,0 +1,25 @@
+aula 38 - Cors
+--Problema de cors - Ocorre quanto tem duas aplicações acontecendo em portas diferentes
+---exemplo back end está sendo executado em uma porta9em um localhost diferente do front
+
+--Não aparenta ser difícil, é somente ir no .js e seguir os comando
+fetch("http://localhost:5080/pessoa")
+.then(retorno =>console.log(retorno))
+
+
+--Agora deve ser escrito em program.cs ou no main no caso
+// Configuração de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ConfigurarCORS", builder =>
+    {
+        builder.AllowAnyOrigin()  // Permite qualquer origem
+               .AllowAnyMethod()  // Permite qualquer método (GET, POST, etc.)
+               .AllowAnyHeader(); // Permite qualquer cabeçalho
+    });
+});
+
+// Aplicar a política de CORS
+app.UseCors("ConfigurarCORS");
+
+--agora explica essa brincadeira meu nobre, quero ver se você é o brabo mesmo

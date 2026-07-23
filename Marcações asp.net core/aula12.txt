@@ -1,0 +1,20 @@
+aula 12 - repositório
+
+. crie uma pasta de repositório 
+. crie o arquivo referente  atabela que receberá comandos, no exemplo é pessoarepositorio no seu é livrorepositorio
+atráves do repositorio é possivel realizar comandos do sql como o crud;
+
+private readonly string? _stringDeConexao
+/*readonly - passar um valor para esse atributo apenas pelo metodo construtor
+e nunca sera modificado o conteúdo*/
+. a string contém credenciais de acesso ao banco de dados
+
+//construtor
+public pessoaRepositorio(string stringDeConexao)
+{
+	_stringDeConexao = stringDeConexao;	
+}
+
+
+
+ 

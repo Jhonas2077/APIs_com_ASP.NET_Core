@@ -1,0 +1,23 @@
+aula08
+. o navegador só consegue executar requisições do tipo get
+do tipo post é só com um software específico, no caso vai ser p thunder client
+extensão do vsc;
+. Criação do segundo método, logo segunda rota
+. Com o post é possível trabalhar com body/corpo é possível enviar texto, html, xml
+. coloque o tipo e objeto no parâmetro e antes selenização - dataannotation [FromBody] 
+
+[HttpPost]
+public Pessoa ManipularModeloPessoa([FromBody] Pessoa p)
+{
+	return p;	
+}
+
+pra mexer no thunder client para requisição post como get não é tão complicado
+
+new resquest - escolha o tipo da requisição - coloque sua url(localhost/rota) e depois de preencher os dados clique em send
+
+{
+	"nome":"dfdfd",
+	"idade":15
+	...
+}

@@ -1,0 +1,12 @@
+aula11
+
+comunicação entre a api e o banco mysql
+
+string de conexão que vai ser responsavel pela comunicação entre a api e o banco mysql
+
+1- localize "appsettings.json"
+2- "AllowedHosts": "*", 
+"ConnectionStrings":{"DefaultConnection":"Server=localhost;Datadabase=api;User=;Password=;"
+}
+//conexão de string:
+conexão padrão

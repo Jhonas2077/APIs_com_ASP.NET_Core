@@ -1,0 +1,7 @@
+Aula 3 - criar e executar o projeto
+
+. Criar uma pasta e conectar com o vscode
+. criar um novo terminal e executar o comando:
+dotnet new webapi -n nome_do_projeto
+. vai ser criado um localhost, um http, um endereço para sua api 
+

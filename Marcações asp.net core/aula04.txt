@@ -1,0 +1,40 @@
+aula 4
+. criar um arquivo de controle que é responsavel pelo gerenciamento de rotas;
+. rotas: caminho, atráves de uma rota é possível executar ações;
+.para herdar é com : e não extends.
+
+
+prática:
+.novo arquivo.cs
+. estrutura básica de uma classe, 
+.herdar ControllerBase --- public class nome_da_classe : ControllerBase
+.[ApiController] - agora não é uma classe comum
+. é necessário um nome para a apicontroller, pq ao acessar o local rost, ele vai ter que acessar a classe de rotas / a classe que tem o caminho que executa as ações, então:
+.[route ("pessoa")]
+. depois manda um método com retorno-essa vai ser chamada agora de rota 
+-- ou seja parece que todo método vai ser chamado de rota ou contém uma para ser executada
+. toda rota tem que ter uma ação explícita [HttpGet] ou seja requisição
+. para exibir informação a requisição é get httpget
+. a requisição funciona somente com um método
+
+
+using Microsoft.AspNetCore.Mvc;
+//Data anotation - com a importação do aspnetcore.mvc faz com que venha data anotation, que por meio de comandos (anotações) faz com que o sistema não os enxergue como métodos ou classes convencionais, mas sim como repositórios ou controlador
+//Data anotation --Toda data anotation abre e fecha colchetes
+[ApiController]
+//Agora a Asp Net core vai enxergar essa classe como um controlador e não como uma classe convensional, mas sim como controlador
+
+[ApiController]
+[Route("pessoa")]
+public class PessoaControle :ControllerBase
+{
+
+	[HttpGet]
+	public string MinhaPrimeiraRota()
+	{
+		return "hello World"
+	}
+
+}
+
+

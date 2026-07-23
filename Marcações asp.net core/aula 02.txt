@@ -1,0 +1,5 @@
+aula 02
+
+para criar uma api --dotnet new webapi -n nome-do-projeto
+selecione a pasta que contem o projeto
+dotnet run para executar o projeto 

@@ -1,0 +1,6 @@
+aula 40- Implementação do cadastro
+--getElementById pega o elemento html pelo identificador
+--comando value para extrair o valor informado
+--seguinte patrão parece que configurar somente pelo back end pode vir a dar ruim o sistema , performace
+principalmente pela posspibilidade de haver muitas requisições, logo é bom validaee pelo front tb, mas projetos oficiais é pelo dois lados la ele
+--

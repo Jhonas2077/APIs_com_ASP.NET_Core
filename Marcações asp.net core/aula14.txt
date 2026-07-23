@@ -1,0 +1,11 @@
+aula 14 -Implementar Controle
+
+. responsável pelas rotas, cada rota executa um comando sql
+que esta da classe repositorio
+
+. comunicação entre o controle e o repositório
+
+. criar uma variável do tipo da classe repositório que é onde tem os comandos para executar
+
+. depois manda um construtor
+
